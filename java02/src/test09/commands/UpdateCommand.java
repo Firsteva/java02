@@ -1,14 +1,27 @@
-package test05.commands;
+package test09.commands;
 
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Scanner;
 
-import test05.Command;
-import test05.Score;
-import test05.ScoreDao;
+import test09.Command;
+import test09.Score;
+import test09.ScoreDao;
+import test09.annotation.Component;
 
+@Component("update")
 public class UpdateCommand implements Command {
+	
+	ScoreDao scoreDao;
+	Scanner scanner;
+
+	public void setScanner(Scanner scanner) {
+		this.scanner = scanner;
+	}
+
+  public void setScoreDao(ScoreDao scoreDao) {
+		this.scoreDao = scoreDao;
+	}
 
   @Override
   public String getCommandInfo() {
@@ -17,8 +30,6 @@ public class UpdateCommand implements Command {
 
   @Override
   public void service(Map<String, Object> params) throws Exception {
-    ScoreDao scoreDao = (ScoreDao)params.get("scoreDao");
-    Scanner scanner = (Scanner)params.get("scanner");
     
     @SuppressWarnings("unchecked")
     ArrayList<String> options = 

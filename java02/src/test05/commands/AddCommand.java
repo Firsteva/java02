@@ -3,9 +3,9 @@ package test05.commands;
 import java.util.ArrayList;
 import java.util.Map;
 
-import test06.Command;
-import test06.Score;
-import test06.ScoreDao;
+import test05.Command;
+import test05.Score;
+import test05.ScoreDao;
 
 public class AddCommand implements Command {
 
