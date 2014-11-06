@@ -47,7 +47,8 @@ public class Test02 {
         reflections.getTypesAnnotatedWith(Component.class);
     
     Object command = null;
-    Component component = null;
+    @SuppressWarnings("unused")
+		Component component = null;
     Method method = null;
     CommandInfo commandInfo = null;
     Command commandAnno = null;
